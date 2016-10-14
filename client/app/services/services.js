@@ -10,8 +10,8 @@ angular.module('shortly.services', [])
           console.error(err);
         });
     },
-    addOne: function(link) {
-      return $http.post('/api/links', link)
+    addOne: function(data) {
+      return $http.post('/api/links', data)
         .then(function(res) {
           return res;
         }, function(err) {

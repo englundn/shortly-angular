@@ -44,7 +44,13 @@ angular.module('shortly', [
   };
   return attach;
 })
-.run(function ($rootScope, $location, Auth) {
+.run(function ($rootScope, $location, Links, Auth) {
+  if (Auth.isAuth()) {
+    $location.path('/links');
+  } else {
+    $location.path('/signin');
+  }
+  // Links.addOne('http://cnn.com');
   // here inside the run phase of angular, our services and controllers
   // have just been registered and our app is ready
   // however, we want to make sure the user is authorized

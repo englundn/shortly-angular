@@ -1,3 +1,17 @@
-<div id='container'>
-  <!-- Your html here -->
+<div id='container' np-controller='LinksController'>
+  <ul
+
+  <div class='link' ng-repeat="link in data.links">
+    <img src='../../assets/redirect_icon.png'/>
+    <span class='info'>
+      <a href={{link.code}} class='title'>{{link.title}}</a>
+      <span class='original'>{{link.url}}</span>
+      <span class='visits'>        
+        <span class='count'>{{link.visits}}</span>
+        Visits
+      </span>
+    </span>
+  </div>
+
+
 </div>
