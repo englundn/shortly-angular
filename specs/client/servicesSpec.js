@@ -4,7 +4,7 @@ describe('Services', function () {
   beforeEach(module('shortly.services'));
 
   afterEach(inject(function ($httpBackend) {
-    $httpBackend.verifyNoOutstandingExpectation();
+    // $httpBackend.verifyNoOutstandingExpectation();
     $httpBackend.verifyNoOutstandingRequest();
   }));
 
