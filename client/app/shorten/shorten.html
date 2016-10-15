@@ -8,8 +8,8 @@
   </div>
 
   <form name='urlform'>
-    <input class={{class}} name='urlinput' type='url' ng-model=link.url required>
-    <input type='submit' value='Shorten' ng-click='checkError(urlform.urlinput.$valid);'>
+    <input class={{class}} name='urlinput' type='url' ng-keyup='checkError(urlform.urlinput.$valid);' ng-model=link.url required>
+    <input type='submit' value='Shorten' ng-click='addLink(urlform.urlinput.$valid)'>
   </form>
 </div>
 
