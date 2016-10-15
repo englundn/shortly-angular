@@ -7,7 +7,7 @@
     </ul>
   </div>
 
-  <div class='link' ng-repeat="link in data.links">
+  <div class='link' ng-repeat='link in data.links | orderBy: "-visits"'>
     <img src='../../assets/redirect_icon.png'/>
     <span class='info'>
       <a href={{link.code}} class='title'>{{link.title}}</a>
