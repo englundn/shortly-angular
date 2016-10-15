@@ -7,7 +7,13 @@
     </ul>
   </div>
 
-  <div class='link' ng-repeat='link in data.links | orderBy: "-visits"'>
+  <div>
+    <form>
+      <input type='text' placeholder='Search' name='search' ng-model='query'>
+    </form>
+  </div>
+  
+  <div class='link' ng-repeat='link in data.links | orderBy: "-visits" | filter:query'>
     <img src='../../assets/redirect_icon.png'/>
     <span class='info'>
       <a href={{link.code}} class='title'>{{link.title}}</a>

@@ -35,6 +35,7 @@ angular.module('shortly.services', [])
       data: user
     })
     .then(function (resp) {
+      console.log('STATUS', resp.status);
       return resp.data.token;
     });
   };
