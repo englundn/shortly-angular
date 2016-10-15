@@ -1,6 +1,16 @@
-<div id='container'>
-<!-- Your code here -->
+<div ng-controller='ShortenController' id='container'>
+  
+  <div class='navigation'>
+    <ul>
+      <li><a href='#/links'>All Links</a></li>
+      <li><a class='selected' href='#/shorten'>Shorten</a></li>
+    </ul>
+  </div>
 
+  <form name='urlform'>
+    <input class={{class}} name='urlinput' type='url' ng-model=link.url required>
+    <input type='submit' value='Shorten' ng-click='checkError(urlform.urlinput.$valid);'>
+  </form>
 </div>
 
 

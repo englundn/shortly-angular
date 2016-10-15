@@ -17,11 +17,23 @@ angular.module('shortly', [
     })
     .when('/links', {
       templateUrl: 'app/links/links.html',
-      controller: 'LinksController'  
+      controller: 'LinksController',
+      authenticate: true
     })
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
-      controller: 'ShortenController'
+      controller: 'ShortenController',
+      authenticate: true
+    })
+    .when('/', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController',
+      authenticate: true
+    })
+    .when('/:url*', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController',
+      authenticate: true
     });
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
@@ -45,12 +57,6 @@ angular.module('shortly', [
   return attach;
 })
 .run(function ($rootScope, $location, Links, Auth) {
-  if (Auth.isAuth()) {
-    $location.path('/links');
-  } else {
-    $location.path('/signin');
-  }
-  // Links.addOne('http://cnn.com');
   // here inside the run phase of angular, our services and controllers
   // have just been registered and our app is ready
   // however, we want to make sure the user is authorized

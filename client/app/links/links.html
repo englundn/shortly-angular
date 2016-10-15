@@ -1,5 +1,11 @@
 <div id='container' np-controller='LinksController'>
-  <ul
+
+  <div class='navigation'>
+    <ul>
+      <li><a class='selected' href='#/links'>All Links</a></li>
+      <li><a href='#/shorten'>Shorten</a></li>
+    </ul>
+  </div>
 
   <div class='link' ng-repeat="link in data.links">
     <img src='../../assets/redirect_icon.png'/>
