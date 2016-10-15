@@ -65,6 +65,7 @@ h1 {
 }
 
 .link img {
+  width: 42px;
   float: left;
   margin: 0 5px;
 }
@@ -87,10 +88,12 @@ h1 {
 .link .original {
   color: #aaa;
   font-size: 12px;
+  margin-left: 30px;
+
 }
 
 .link .info {
-  margin-left: 55px;
+  margin-left: 30px;
 }
 
 form {

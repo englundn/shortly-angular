@@ -8,9 +8,9 @@ angular.module('shortly.links', [])
 .directive('shortenedLink', function() {
   return {
     template:
-      '<img src="../../assets/redirect_icon.png"/>' + 
+      '<img src="{{link.url}}/favicon.ico"/>' + 
       '<span class="info">' + 
-        '<a href={{link.code}} class="title">{{link.title}}</a>' +
+        '<a href={{link.code}} class="title">{{link.title}}</a><br>' +
         '<span class="original">{{link.url}}</span>' + 
         '<span class="visits">' + 
           '<span class="count">{{link.visits}}</span>' +

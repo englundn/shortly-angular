@@ -13,8 +13,7 @@
     </form>
   </div>
   
-  <div class='link' ng-repeat='link in data.links | orderBy: "-visits" | filter:query'>
-    <shortened-link></shortened-link>
+  <div class='link' ng-repeat='link in data.links | orderBy: "-visits" | filter:query' shortened-link>
   </div>
 
 
