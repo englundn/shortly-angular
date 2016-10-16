@@ -4,7 +4,7 @@ var helpers = require('./helpers.js'); // our custom middleware
 
 module.exports = function (app, express) {
   app.get('/:code', linksController.navToLink);
-
+  app.get('/%7B%7Blink.url%7D%7D/:ico', function() { return; });
   app.post('/api/users/signin', userController.signin);
   app.post('/api/users/signup', userController.signup);
   app.get('/api/users/signedin', userController.checkAuth);
